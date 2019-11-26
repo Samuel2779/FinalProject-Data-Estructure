@@ -1,5 +1,7 @@
 package sample;
 
+import javafx.scene.control.Alert;
+
 public class AVLTree<T extends Comparable<T>> {
     private Node<T> origin;
 
@@ -45,9 +47,17 @@ public class AVLTree<T extends Comparable<T>> {
                 //it is checked that it is balanced
                 if(height(origin.getLeft())-height(origin.getRight())==-2) {
                     if(element.compareTo(origin.getRight().getElement())>0) {
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setTitle("Balance alert");
+                        alert.setHeaderText("Unbalance at node: " + origin.getElement() + " fixed with  simple left rotation");
+                        alert.showAndWait();
                         System.out.println("rotacion simple a la izuierda");
                         origin = rotateSimpleToLeft(origin);
                     }else {
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setTitle("Balance alert");
+                        alert.setHeaderText("Unbalance at node: " + origin.getElement() + " fixed with  double right rotation");
+                        alert.showAndWait();
                         origin = rotateDoubleToLeft(origin);
                         System.out.println("rotacion doble a la izquierda");
                     }
@@ -58,9 +68,17 @@ public class AVLTree<T extends Comparable<T>> {
                 //it is checked that it is balanced
                 if(height(origin.getLeft())-height(origin.getRight())==2) {
                     if(element.compareTo(origin.getLeft().getElement())<0) {
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setTitle("Balance alert");
+                        alert.setHeaderText("Unbalance at node: " + origin.getElement() + " fixed with  simple right rotation");
+                        alert.showAndWait();
                         System.out.println("rotacion simple a la derecha");
                         origin = rotateSimpleToRight(origin);
                     }else {
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setTitle("Balance alert");
+                        alert.setHeaderText("Unbalance at node: " + origin.getElement() + " fixed with double right rotation");
+                        alert.showAndWait();
                         System.out.println("rotacion doble a la derecha");
                         origin = rotateDoubleToRight(origin);
                     }
