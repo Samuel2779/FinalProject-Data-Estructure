@@ -69,7 +69,6 @@ public class AVLTree<T extends Comparable<T>> {
         }
 
         int height = maxHeight(height (origin.getLeft()),height(origin.getRight()));
-        System.out.println("Height: "+origin.getElement()+" "+height);
         origin.setHeight(height+1);
         return origin;
     }
@@ -222,11 +221,11 @@ public class AVLTree<T extends Comparable<T>> {
         Node<T> r=new Node<>(c.getElement(), c.getLeft(),b);
         return r;
     }
-    private  void calculateHeight(Node<T> a){
-        if(a!=null){
-            calculateHeight(a.getLeft());
-            calculateHeight(a.getRight());
-            a.setHeight(1 + Math.max(heightTree(a.getLeft()), heightTree(a.getRight()))) ;
+    private  void calculateHeight(Node<T> nodeC){
+        if(nodeC!=null){
+            calculateHeight(nodeC.getLeft());
+            calculateHeight(nodeC.getRight());
+            nodeC.setHeight(1 + Math.max(heightTree(nodeC.getLeft()), heightTree(nodeC.getRight()))) ;
         }
     }
     public int heightTree(Node<T> a){

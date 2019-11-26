@@ -62,20 +62,14 @@ public class AVLscene extends Scene {
                 "-fx-border-style: solid inside;" +
                 "-fx-border-width: 2;" +
                 "-fx-border-insets: 5;" +
-                "-fx-border-radius: 5;" +
+                "-fx-border-radius: 12;" +
                 "-fx-border-color: black;");
 
         bottom.setHgap(15);
         bottom.setVgap(15);
         bottom.setAlignment(Pos.CENTER);
-        bottom.setStyle("-fx-padding: 10;" +
-                "-fx-border-style: solid inside;" +
-                "-fx-border-width: 2;" +
-                "-fx-border-insets: 5;" +
-                "-fx-border-radius: 5;" +
-                "-fx-border-color: black;");
+
         bottom.setPadding(new Insets(10, 10, 10, 10));
-        mainContent.setStyle("-fx-background-image:url('/img/backG.jpg');");
 
         /*************************
          * Main content structure *
@@ -84,12 +78,6 @@ public class AVLscene extends Scene {
         menuBar.getMenus().add(menu);
         bottom.getChildren().addAll(lblinput, input, insert, delete);
         mainContent.getChildren().addAll(menuBar, avl, bottom);
-        mainContent.setStyle("-fx-padding: 10;" +
-                "-fx-border-style: solid inside;" +
-                "-fx-border-width: 2;" +
-                "-fx-border-insets: 5;" +
-                "-fx-border-radius: 7;" +
-                "-fx-border-color: black;");
 
 
         super.setRoot(mainContent);
